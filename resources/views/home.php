@@ -10,84 +10,6 @@
         <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
         <link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-        <style>
-
-
-            .cont {
-                width: 100%;
-                height:150px;
-                position: relative;
-            }
-            .img{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            .hov {
-                float: left;
-                position: absolute;
-                width:100%;
-                height:50%;
-                top:0;
-                left:0;
-                z-index: 1000;
-                padding: 20px;
-                color: #FFFFFF;
-                font-weight: bold;
-                display: none;
-            }
-            .titles{
-                position: absolute;
-                opacity: .7;
-                top: 0%;
-                background-color: black;
-                width:90%;
-                padding: 10px;
-            }
-            .tit{
-                font-size: 16px;
-                height:30px;
-            }
-            .desc{
-                height:0px;
-                visibility: hidden;
-            }
-
-            .titles:hover .desc {
-                height:100%;
-                visibility: visible;
-            }
-
-            .icons{
-                position: absolute;
-                padding: 10px;
-                top:100%;
-                left:40%;
-            }
-            .g-icon{
-                color:#000000;
-                font-size: 32px !important;
-                margin-right: 10px;
-            }
-            .img:hover{
-                opacity: .8;
-                cursor: pointer;
-            }
-
-            .hov:hover{
-                display: block;
-                cursor: pointer;
-            }
-
-            .img:hover + .hov {
-                display: block;
-                z-index: 10000;
-            }
-
-
-        </style>
     </head>
     <body ng-controller="appCtrl">
         <div class="container-fluid radius editor">
@@ -102,28 +24,28 @@
                     </div>
                     <div class="row fill-height" style="font-size: 12px;background-color: #fff;">
                         <div class="col col-xs-12 col-sm-12 col-md-12 menu-items-container" style="font-family: 'Orbitron', sans-serif;">
-                            <a href="javascript:;" ng-click="selectPage('home')"><div ng-class="pages['home'].selected?'selected':''"><i class="fa fa-folder ico-blue"></i> Abstract</div></a>
+                            <a href="javascript:;" ng-click="selectPage('home')"><div ng-class="pages['home'].selected ? 'selected' : ''"><i class="fa fa-folder ico-blue"></i> Abstract</div></a>
                             <div style="border-left:dotted 1px;">
                                 <div class="files-line"></div>
                                 <a href="javascript:;" ng-click="selectPage('about')">
-                                    <div ng-class="pages['about'].selected?'selected':''">
+                                    <div ng-class="pages['about'].selected ? 'selected' : ''">
                                         <i class="fa fa-file ico-blue"></i> About</div></a>
                                 <div class="files-line"></div>
                                 <a href="javascript:;" ng-click="selectPage('services')">
-                                    <div ng-class="pages['services'].selected?'selected':''">
+                                    <div ng-class="pages['services'].selected ? 'selected' : ''">
                                         <i class="fa fa-file ico-blue"></i> Services</div></a>
                                 <div class="files-line"></div>
                                 <a href="javascript:;" ng-click="selectPage('projects')">
-                                    <div ng-class="pages['projects'].selected?'selected':''">
+                                    <div ng-class="pages['projects'].selected ? 'selected' : ''">
                                         <i class="fa fa-file ico-blue"></i> Projects</div></a>
                                 <div class="files-line"></div>
                                 <a href="javascript:;" ng-click="selectPage('contact')">
-                                    <div ng-class="pages['contact'].selected?'selected':''">
+                                    <div ng-class="pages['contact'].selected ? 'selected' : ''">
                                         <i class="fa fa-file ico-blue"></i> Contact</div></a>
                             </div>
                             <div class="files-line" style="border-left:dotted 1px;"></div>
                             <a href="javascript:;" ng-click="selectPage('request_service')">
-                                <div ng-class="pages['request_service'].selected?'selected':''">
+                                <div ng-class="pages['request_service'].selected ? 'selected' : ''">
                                     <i class="fa fa-file ico-blue"></i> Request Service</div></a>
                         </div>
                     </div>
@@ -133,62 +55,62 @@
                     <div class="row fill-height">
                         <div class="col col-xs-12 col-sm-12 col-md-12 menu-items-container">
                             <ul class="list-inline menu-items hidden-md hidden-lg">
-                                <li ng-class="pages['home'].selected?'active':''">
+                                <li ng-class="pages['home'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('home')">
                                         <span class="fa fa-home ico-blue"></span> Home</a></li>
-                                <li ng-class="pages['about'].selected?'active':''">
+                                <li ng-class="pages['about'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('about')">
                                         <span class="fa fa-info-circle ico-blue"></span> About</a></li>
-                                <li ng-class="pages['services'].selected?'active':''">
+                                <li ng-class="pages['services'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('services')">
                                         <span class="fa fa-briefcase ico-blue"></span> Services</a></li>
-                                <li ng-class="pages['projects'].selected?'active':''">
+                                <li ng-class="pages['projects'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('projects')">
                                         <span class="fa fa-area-chart ico-blue"></span> Projects</a></li>
-                                <li ng-class="pages['contact'].selected?'active':''">
+                                <li ng-class="pages['contact'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('contact')">
                                         <span class="fa fa-envelope ico-blue"></span> Contact</a></li>
-                                <li ng-class="pages['request_service'].selected?'active':''">
+                                <li ng-class="pages['request_service'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('request_service')">
                                         <span class="fa fa-wpforms ico-blue"></span> Request Service</a></li>
                             </ul>
                             <ul class="list-inline menu-items hidden-xs hidden-sm">
-                                <li ng-show="pages['home'].open" ng-class="pages['home'].selected?'active':''">
+                                <li ng-show="pages['home'].open" ng-class="pages['home'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('home')">
                                         <span class="fa fa-home ico-blue"></span> Home</a>
                                     <a href="javascript:;" ng-click="closePage('home')">
                                         <span style="font-size: 11px;margin-left: 10px;" class="fa fa-close ico-blue"></span>
                                     </a>
                                 </li>
-                                <li ng-show="pages['about'].open" ng-class="pages['about'].selected?'active':''">
+                                <li ng-show="pages['about'].open" ng-class="pages['about'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('about')">
                                         <span class="fa fa-info-circle ico-blue"></span> About</a>
                                     <a href="javascript:;" ng-click="closePage('about')">
                                         <span style="font-size: 11px;margin-left: 10px;" class="fa fa-close ico-blue"></span>
                                     </a>
                                 </li>
-                                <li ng-show="pages['services'].open" ng-class="pages['services'].selected?'active':''">
+                                <li ng-show="pages['services'].open" ng-class="pages['services'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('services')">
                                         <span class="fa fa-briefcase ico-blue"></span> Services</a>
                                     <a href="javascript:;" ng-click="closePage('services')">
                                         <span style="font-size: 11px;margin-left: 10px;" class="fa fa-close ico-blue"></span>
                                     </a>
                                 </li>
-                                <li ng-show="pages['projects'].open" ng-class="pages['projects'].selected?'active':''">
+                                <li ng-show="pages['projects'].open" ng-class="pages['projects'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('projects')">
                                         <span class="fa fa-area-chart ico-blue"></span> Projects</a>
                                     <a href="javascript:;" ng-click="closePage('projects')">
                                         <span style="font-size: 11px;margin-left: 10px;" class="fa fa-close ico-blue"></span>
                                     </a>
                                 </li>
-                                <li ng-show="pages['contact'].open" ng-class="pages['contact'].selected?'active':''">
+                                <li ng-show="pages['contact'].open" ng-class="pages['contact'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('contact')">
                                         <span class="fa fa-envelope ico-blue"></span> Contact</a>
                                     <a href="javascript:;" ng-click="closePage('contact')">
                                         <span style="font-size: 11px;margin-left: 10px;" class="fa fa-close ico-blue"></span>
                                     </a>
                                 </li>
-                                <li ng-show="pages['request_service'].open" ng-class="pages['request_service'].selected?'active':''">
+                                <li ng-show="pages['request_service'].open" ng-class="pages['request_service'].selected ? 'active' : ''">
                                     <a href="javascript:;" ng-click="selectPage('request_service')">
                                         <span class="fa fa-wpforms ico-blue"></span> Request Service</a>
                                     <a href="javascript:;" ng-click="closePage('request_service')">
@@ -235,7 +157,7 @@
                                         <h3><i class="fa fa-wpforms ico-blue"></i> Request Service</h3><br><br>
                                         <blockquote>
                                             <form id="request" ng-submit="submitRequest()">
-                                                <input class="form-control" name="name" placeholder="Full name"><br>
+                                                <input class="form-control" name="fullname" placeholder="Full name"><br>
                                                 <input class="form-control" name="email" placeholder="Email"><br>
                                                 <select class="form-control" name="service">
                                                     <option value="">Select service</option>
@@ -244,6 +166,13 @@
                                                     <option value="development">Web Development</option>
                                                 </select><br>
                                                 <textarea class="form-control" name="notes" placeholder="Please enter any questions & notes here"></textarea><br>
+                                                <?php
+                                                require_once('recaptchalib.php');
+                                                $publickey = "6LcBeiETAAAAAOjx1O2MYjOklR0XUd7-HBBqaq6X"; // you got this from the signup page
+                                                echo recaptcha_get_html($publickey);
+                                                ?><br>
+                                                <span class="error" ng-show="captcha">The code you entered isn't correct.</span><br>
+                                                <span class="alert alert-success" ng-show="success">Your request was sent successfully.</span><br>
                                                 <input class="btn btn-success pull-right" type="submit" value="Send" ng-disabled="process">
                                             </form>
                                         </blockquote>
@@ -268,7 +197,7 @@
                                                             <div class="desc">{{proj.description}}</div>
                                                         </div>
                                                         <div class="icons">
-                                                            <a title="Add new project" class="btn btn-info">Visit</a>
+                                                            <a title="Visit Website" class="btn btn-info">Visit</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -291,6 +220,7 @@
         <script src="js/gallery/lightgallery.js"></script>
         <script src="js/gallery/lg-thumbnail.js"></script>
         <script src="js/gallery/lg-fullscreen.js"></script> 
+        <script src="js/jquery-validation/jquery.validate.min.js"></script> 
         <script>
                                                                         $('body').on('click', '.lightgallery', function () {
                                                                             var images = [];

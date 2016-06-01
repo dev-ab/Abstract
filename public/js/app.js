@@ -98,14 +98,40 @@ app.controller('appCtrl', ['$scope', '$window', function ($scope, $window) {
 
         $scope.submitRequest = function () {
             $scope.process = true;
-            alert($('#request').serialize());
+            $scope.captcha = false;
+            $('#request').validate({
+                rules: {
+                    fullname: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    service: {required: true},
+                    notes: {required: true}
+                },
+                messages: {
+                }
+            });
+
+            if (!$('#request').valid()) {
+                $scope.process = false;
+                return;
+            }
+
+
             $.ajax({
-                url: 'asdasd',
+                url: '/send',
                 type: 'post',
                 data: $('#request').serialize(),
                 success: function (data) {
                     console.log(data);
                     $scope.process = false;
+                    if (data == 'true')
+                        $scope.success = true;
+                    else
+                        $scope.captcha = true;
                     $scope.$apply()
                 },
                 error: function (data) {
